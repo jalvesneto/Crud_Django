@@ -1,0 +1,28 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<body>
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    To-Do List!
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            
+        </tr>
+    </thead>
+{% for dbs in db %}
+    <tr>
+        <th>{{dbs.lembrete}}</th>
+        <th style="text-align: right;">
+            <a href="/edit/{{dbs.id}}/" class="btn btn-success ">Editar</a>
+            <a href="/delete/{{dbs.id}}/" class="btn btn-success">Deletar</a>
+        </th>
+    </tr>
+{% endfor %}
+</table>
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    <a href="/add" class="btn btn-success">Adicionar</a>
+</div>
+</body>
